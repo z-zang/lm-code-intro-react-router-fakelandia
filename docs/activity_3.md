@@ -1,4 +1,4 @@
-# Activity 3 - 
+# Activity 3 - Confess (or Just Say Hi)
 
 ## Confession Page
 
