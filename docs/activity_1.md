@@ -26,7 +26,9 @@ This is their desired homepage. From the header, it looks like you'll want multi
 
 ## What's Next?
 
-So we can navigate between different simple components by typing in URLs. But we need some proper content for our site!
+So far we have enabled basic routing: when we navigate manually to a particular URL, we can get a particular component (or a 404 component for unknown URLs) 
+
+Next, let's begin adding some content to our site.
 
 ## Layouts
 
