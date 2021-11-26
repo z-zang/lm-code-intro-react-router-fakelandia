@@ -6,7 +6,9 @@ Let's see what the design is for this page:
 
 ![Misdemeanours](./images/misdemeanours.png "Sketched misdemeanour page")
 
-Whoa! There's a LOT going on there. Let's break it down.
+Whoa! There's a LOT going on there. 
+
+Let's break it down.
 
 ## Requirements
 
@@ -21,9 +23,9 @@ Then, the misdemeanour, which they insist is always shown next to an appropriate
 * Mild Public Rudeness = 🤪
 * Speaking in a Lift = 🗣
 * Not Eating Your Vegetables = 🥗
-* Supporting Manchester United = 🤡
+* Supporting Manchester United = 😈
 
-Lastly, the "Punishment Idea". Under the Fakelandian system all punishments are random. They like to get a random picture from the internet and use that as inspiration for the appropriate punishment. Due to the low number of crimes, this system supposedly works extremely well.
+Lastly, the "Punishment Idea". Under the Fakelandian system all punishments are random. They find a random picture on the internet and use it as inspiration for the appropriate punishment. Due to the low number of crimes, this weird system supposedly works extremely well.
 
 ## Let's build it!
 

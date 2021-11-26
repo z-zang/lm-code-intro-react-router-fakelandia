@@ -20,17 +20,19 @@ It looks like they want a form with three elements.
 
 ## Form Behaviour
 
-**When the form is filled in, the confess button becomes enabled.**
+**When the form is filled in, THEN the confess button becomes enabled.**
 
-What does "filled in" mean, exactly? It's up to you! Perhaps the subject line is required, and the details must be a certain length, and a dropdown option must be selected? Or maybe you think other requirements make more sense - choose some sensible form states that will enable or disable the Confess button!
+What does "filled in" mean, exactly? It's up to you! Perhaps the subject line is required, and the details must be a certain length, and a dropdown option must be selected? Or maybe you think other requirements make more sense - choose some sensible form states that will **enable** or **disable** the Confess button!
 
-**When Confess is pressed, if they are confessing to a crime then it should be added to the list of crimes in the current application state. If they just want to talk, you can log their request in the console.**
+**When Confess is pressed: IF they are confessing to a crime THEN it should be added to the list of crimes in the current application state. However, IF they just want to talk, THEN you can log their request in the console.**
 
 👉 Build a form that obeys the above rules, with your own interpretation of what it means for the form to be correctly filled in.
 
-👉 This might be a good candidate for some testing. (If you haven't been testing all your components already!) Add a `test.js` file to check your button is enabled/disabled correctly given the right props to the form component.
+👉 This might be a good candidate for some testing. (If you haven't been testing all your components already... you have, right?!) Add a `test.js` file to check your button is enabled/disabled correctly given the right props to the form component.
 
-👉 Check you can submit your own crimes that get added to the list in state!
+👉 Check you can submit your own crimes that get added to the list in state. It's starting to feel like a real app! (If a weird one.)
+
+👉 Hold on! Have you been writing quality, valid, accessible HTML? Maybe now is a good time to run your generated HTML through a validator and see!
 
 👉 (Optional) You may have noticed the 1.5s wait when you call `generateMisdemeanours`. If not, try increasing the sleep(1500) in `generateMisdemeanours` until it becomes annoying when you reload. Can you show a nice "loading" message while the fake API is loading?
 
@@ -38,6 +40,6 @@ What does "filled in" mean, exactly? It's up to you! Perhaps the subject line is
 
 ## Hooray!
 
-You've done it! You've modernised the extremely weird justice system of Fakelandia, and hopefully had some fun and got to experiment a little in the process.
+You've done it! You've modernised the extremely unusual justice system of Fakelandia, and hopefully had some fun and got to experiment a little in the process.
 
 Have a well-deserved rest and look forward to using all these skills to make some extremely cool apps!

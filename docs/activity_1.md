@@ -2,13 +2,13 @@
 
 ## Introduction - Dummy Routing
 
-Part of this task is about practicing translating a visual design into an actual website.
+Much of this task is about practicing taking a visual design and turning it into an actual website.
 
 Take a look at this image the goverment of Fakelandia have provided:
 
 ![Homepage](./images/homepage.png "Sketched homepage")
 
-It looks like you'll want multiple **routes**. One for your homepage, and perhaps one each for the "misdemeanours" and "confession" pages?
+This is their desired homepage. From the header, it looks like you'll want multiple **routes**. Perhaps one for your homepage, and perhaps one each for the "misdemeanours" and "confession" pages?
 
 👉 Use `npm` to install react-router version 6
 
@@ -18,15 +18,23 @@ It looks like you'll want multiple **routes**. One for your homepage, and perhap
 
 `const Home = () => <div>Home!</div>;`
 
-👉 Add react-router components and define routes which render the right dummy components when you navigate to the URLs for your homepage, and a misdemeanours page, and a confession page.
+👉 Add react-router components and define routes which render the correct dummy components when you navigate to the URLs for your homepage, and a misdemeanours page, and a confession page.
 
 (You will have to choose these URLs when you define your routes!)
+
+👉 How does your app handle a mistyped route? Can you add a nice default 404 route defined in its own component?
+
+## What's Next?
+
+So we can navigate between different simple components by typing in URLs. But we need some proper content for our site!
 
 ## Layouts
 
 From the image we've seen so far, it seems like the Fakelandians want a header with a nav bar in it to be shared across all their pages.
 
-👉 Create a Layout component with a header in it. (Maybe the header would have its own sub-components such as Nav? Up to you!)
+👉 Create a Layout component with a header in it. 
+
+❗ Maybe the header component itself has its own sub-components such as Nav? Maybe Nav has its own sub-components too?! It's up to you how you structure your components! *Try and keep them small and neat - if they get large, split them out into subcomponents.*
 
 👉 Use nested routes to render the nav bar at the top of each of the routes you have so far.
 
@@ -34,9 +42,11 @@ From the image we've seen so far, it seems like the Fakelandians want a header w
 
 👉 Make sure your nav links are using the react-router components to navigate seamlessly between your routes.
 
-👉 (Optional) It might be cool to add a footer! Although... footers are famously annoying to create using CSS, particularly if you want them to stay at the bottom for any height of page, so consider this a stretch goal. 
+👉 (Optional) It might be cool to add a footer! You could put your name and a copyright symbol in it to impress people with. Although... footers are famously annoying to create using CSS, particularly if you want them to stay at the bottom for any height of page, so consider this a stretch goal. 
 
-Multiple solutions exist. The most modern is to use flexbox - think about making your `<body>` flex in a column direction, and to make your `<main>` element flex-grow.
+❗ Multiple solutions exist in CSS for creating footers. The most modern is to use flexbox - think about making your `<body>` flex in a column direction, and to make your `<main>` element flex-grow.
+
+❗ Don't spend too long messing with footers! CSS can be deeply irritating. If it doesn't work out, just delete the footer for now and move on, and maybe come back later if you want to.
 
 ## Next
 
@@ -45,5 +55,7 @@ Multiple solutions exist. The most modern is to use flexbox - think about making
 * "Initial commit"
 * "Installed react-router"
 * "Added route component"
+* "Added footer"
+* "Removed footer"
 
 So far we've set up the basics of a functioning website! Let's get looking at that misdemeanours page in [activity 2](./activity_2.md)
