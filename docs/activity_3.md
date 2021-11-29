@@ -26,6 +26,8 @@ What does "filled in" mean, exactly? It's up to you! Perhaps the subject line is
 
 **When Confess is pressed: IF they are confessing to a crime THEN it should be added to the list of crimes in the current application state. However, IF they just want to talk, THEN you can log their request in the console.**
 
+👉 Try to keep your commits for this activity small and isolated - each of these bullet points is a good candidate for its own commit... or even multiple small commits per bullet point!
+
 👉 Build a form that obeys the above rules, with your own interpretation of what it means for the form to be correctly filled in.
 
 👉 This might be a good candidate for some testing. (If you haven't been testing all your components already... you have, right?!) Add a `test.js` file to check your button is enabled/disabled correctly given the right props to the form component.
@@ -33,13 +35,6 @@ What does "filled in" mean, exactly? It's up to you! Perhaps the subject line is
 👉 Check you can submit your own crimes that get added to the list in state. It's starting to feel like a real app! (If a weird one.)
 
 👉 Hold on! Have you been writing quality, valid, accessible HTML? Maybe now is a good time to run your generated HTML through a validator and see!
+## The Next Level
 
-👉 (Optional) You may have noticed the 1.5s wait when you call `generateMisdemeanours`. If not, try increasing the sleep(1500) in `generateMisdemeanours` until it becomes annoying when you reload. Can you show a nice "loading" message while the fake API is loading?
-
-(Hint: One way to do this could be to add an `isLoading` boolean to state, for example.)
-
-## Hooray!
-
-You've done it! You've modernised the extremely unusual justice system of Fakelandia, and hopefully had some fun and got to experiment a little in the process.
-
-Have a well-deserved rest and look forward to using all these skills to make some extremely cool apps!
+If you're feeling up to it, [activity 4](./activity_4.md) has some suggestions for taking your app to new heights - including deploying it live on the internet! 🤩
