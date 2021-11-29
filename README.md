@@ -52,4 +52,4 @@ You should then be able to access the default application by opening the browser
 
 ## Let's get started
 
-Here's [the app definition](./docs/activity_1.md).
+Time to start building the app the Fakelandians want. Let's start with the homepage in [activity 1](./docs/activity_1.md).
