@@ -37,8 +37,10 @@ Despite the clear severity of some of these awful crimes, the Fakelandians refer
 To create your application, run the following command in an empty folder:
 
 ```
-npx create-react-app . 
+npx create-react-app . --template typescript 
 ```
+
+This will setup a fresh React app for you, with everything for TypeScript already enabled.
 
 Followed by:
 
