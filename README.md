@@ -8,7 +8,7 @@ Fakelandia is a happy place with a low crime rate, but it's important to each ci
 
 *This lab won't lead you step-by-step through each line of code*, but it will lead you through all of the stages of building the app.
 
-You'll get to use your own creativity to decide what a good solution looks like, as you bring the designs to life.
+You're going to be building the app entirely from scratch, so you'll get to use your own creativity to decide what a good solution looks like as you bring the designs to life.
 
 This is your chance to show off everything you've learned about building React applications, so feel free to be creative and have some fun. 
 
