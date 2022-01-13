@@ -4,9 +4,9 @@
 
 Let's see what the design is for this page:
 
-![Misdemeanours](./images/misdemeanours.png "Sketched misdemeanour page")
+![Misdemeanours](./images/misdemeanours.png 'Sketched misdemeanour page')
 
-Whoa! There's a LOT going on there. 
+Whoa! There's a LOT going on there.
 
 Let's break it down.
 
@@ -20,10 +20,10 @@ Then, the date.
 
 Then, the misdemeanour, which they insist is always shown next to an appropriate emoji:
 
-* Mild Public Rudeness = 🤪
-* Speaking in a Lift = 🗣
-* Not Eating Your Vegetables = 🥗
-* Supporting Manchester United = 😈
+-   Mild Public Rudeness = 🤪
+-   Speaking in a Lift = 🗣
+-   Not Eating Your Vegetables = 🥗
+-   Supporting Manchester United = 😈
 
 Lastly, the "Punishment Idea". Under the Fakelandian system all punishments are random. They find a random picture on the internet and use it as inspiration for the appropriate punishment. Due to the low number of crimes, this weird system supposedly works extremely well.
 
@@ -43,14 +43,16 @@ By default, an `active` class is added to a `<NavLink>` component when it is act
         <NavLink
             to="someRoute"
             style={({ isActive }) =>
-              isActive ? someStyleObject : undefined
+              isActive ? someActiveStyleObject : someOtherStyleObject
             }
           >
 ```
 
 ## Getting Misdemeanours
 
-The Fakelandians have provided an API for you to call to get a list of misdemeanours in the [generate misdemeanours.js](./generate_misdemeanours.js) file. We'll use this to get the IDs, dates and misdemeanours.
+The Fakelandians have provided an API for you to call to get a list of misdemeanours in the [generate misdemeanours.ts](./generate_misdemeanours.ts) file. We'll use this to get the IDs, dates and misdemeanours.
+
+They've also provided a custom type of `Misdemeanour` for you - a custom type which can be only one of four possible values, corresponding to the four possible Misdemeanours under Fakelandian law.
 
 You can import the `generateMisdemeanours` async function and call it like it's an external API.
 
@@ -78,6 +80,6 @@ The Fakelandian system for getting random punishment inspiration is to use a ser
 
 👉 Use the Picsum service to add random pictures to each misdemeanour, setting `width` and `height` in the URL.
 
-👉 Remember to **commit** your code often! 
+👉 Remember to **commit** your code often!
 
 Now let's move on to [activity 3](./activity_3.md) where we'll help people confess to some misdemeanours.

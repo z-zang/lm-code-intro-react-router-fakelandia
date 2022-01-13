@@ -6,17 +6,23 @@ Much of this task is about practicing taking a visual design and turning it into
 
 Take a look at this image the goverment of Fakelandia have provided:
 
-![Homepage](./images/homepage.png "Sketched homepage")
+![Homepage](./images/homepage.png 'Sketched homepage')
 
 This is their desired homepage. From the header, it looks like you'll want multiple **routes**. Perhaps one for your homepage, and perhaps one each for the "misdemeanours" and "confession" pages?
 
-👉 Use `npm` to install react-router version 6
+👉 Use `npm` to install react-router version 6 and the associated TypeScript @types package:
+
+```
+npm install react-router-dom@6 @types/react-router-dom
+```
+
+💡 When you install an `npm` package _most_ have a corresponding `@types` package with the same name which enables the TypeScript features.
 
 👉 Get rid of the default bits of create-react-app that you don't need (e.g. `logo.svg`)
 
-👉 Create dummy components for your home, confession and misdemeanour pages, e.g. 
+👉 Create dummy components for your home, confession and misdemeanour pages, e.g.
 
-`const Home = () => <div>Home!</div>;`
+`const Home : React.FC = () => <div>Home!</div>;`
 
 👉 Add react-router components and define routes which render the correct dummy components when you navigate to the URLs for your homepage, and a misdemeanours page, and a confession page.
 
@@ -26,7 +32,7 @@ This is their desired homepage. From the header, it looks like you'll want multi
 
 ## What's Next?
 
-So far we have enabled basic routing: when we navigate manually to a particular URL, we can get a particular component (or a 404 component for unknown URLs) 
+So far we have enabled basic routing: when we navigate manually to a particular URL, we can get a particular component (or a 404 component for unknown URLs)
 
 Next, let's begin adding some content to our site.
 
@@ -34,9 +40,9 @@ Next, let's begin adding some content to our site.
 
 From the image we've seen so far, it seems like the Fakelandians want a header with a nav bar in it to be shared across all their pages.
 
-👉 Create a Layout component with a header in it. 
+👉 Create a Layout component with a header in it.
 
-❗ Maybe the header component itself has its own sub-components such as Nav? Maybe Nav has its own sub-components too?! It's up to you how you structure your components! *Try and keep them small and neat - if they get large, split them out into subcomponents.*
+❗ Maybe the header component itself has its own sub-components such as Nav? Maybe Nav has its own sub-components too?! It's up to you how you structure your components! _Try and keep them small and neat - if they get large, split them out into subcomponents._
 
 👉 Use nested routes to render the nav bar at the top of each of the routes you have so far.
 
@@ -44,7 +50,7 @@ From the image we've seen so far, it seems like the Fakelandians want a header w
 
 👉 Make sure your nav links are using the react-router components to navigate seamlessly between your routes.
 
-👉 (Optional) It might be cool to add a footer! You could put your name and a copyright symbol in it to impress people with. Although... footers are famously annoying to create using CSS, particularly if you want them to stay at the bottom for any height of page, so consider this a stretch goal. 
+👉 (Optional) It might be cool to add a footer! You could put your name and a copyright symbol in it to impress people with. Although... footers are famously annoying to create using CSS, particularly if you want them to stay at the bottom for any height of page, so consider this a stretch goal.
 
 ❗ Multiple solutions exist in CSS for creating footers. The most modern is to use flexbox - think about making your `<body>` flex in a column direction, and to make your `<main>` element flex-grow.
 
@@ -54,10 +60,10 @@ From the image we've seen so far, it seems like the Fakelandians want a header w
 
 👉 Remember to **commit** your code often. Small commits with descriptive messages are best, e.g.:
 
-* "Initial commit"
-* "Installed react-router"
-* "Added route component"
-* "Added footer"
-* "Removed footer"
+-   "Initial commit"
+-   "Installed react-router"
+-   "Added route component"
+-   "Added footer"
+-   "Removed footer"
 
 So far we've set up the basics of a functioning website! Let's get looking at that misdemeanours page in [activity 2](./activity_2.md)
