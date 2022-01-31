@@ -14,7 +14,7 @@ Let's break it down.
 
 The Fakelandians want a browsable list of all misdemeanours. You can decide how to display it - is it a table? A CSS grid? Built from flexbox? All are good options.
 
-There are four columns to show. First, the citizen ID of the person committing the misdemeanour. (Rest assured they keep their data carefully anonymised so these IDs can't be traced back to individual!)
+There are four columns to show. First, the citizen ID of the person committing the misdemeanour. (Rest assured they keep their data carefully anonymised so these IDs can't be traced back to the individual!)
 
 Then, the date.
 
@@ -39,7 +39,7 @@ By default, an `active` class is added to a `<NavLink>` component when it is act
 
 (Optionally you can use the following, more complicated, setup to pass a `styleObject` e.g. `{{ color: red}}`)
 
-```JavaScript
+```TSX
         <NavLink
             to="someRoute"
             style={({ isActive }) =>
