@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Root from './Root.tsx'
+import App from './App.tsx'
+import ErrorPage from './pages/ErrorPage.tsx'
 import MisdemeanoursPage from './pages/MisdemeanoursPage.tsx'
 import ConfessPage from './pages/ConfessPage.tsx'
 import HomePage from './pages/HomePage.tsx'
@@ -12,8 +13,8 @@ import './index.css'
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Root />,
-        errorElement: <div>Error: Page not found!</div>,
+        element: <App />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "home",
