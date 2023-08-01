@@ -1,0 +1,56 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 150px;
+    font-size: large;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form__fieldWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__fieldWrapper> :first-child {
+    margin-right: 20px;
+}
+
+.form__warning {
+    color: crimson;
+    font-weight: 600;
+}
+
+.form__submit {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    color: white;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.form__submit:hover {
+    border-color: #646cff;
+}
+
+.successMessage {
+    color: green;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.errorMessage {
+    color: crimson;
+    font-weight: 600;
+    font-size: larger;
+}

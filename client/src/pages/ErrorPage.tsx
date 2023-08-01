@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 
-type Props = {}
-
-const ErrorPage = (props: Props) => {
+const ErrorPage = () => {
     return (
         <div>
             Error: Page not found!
