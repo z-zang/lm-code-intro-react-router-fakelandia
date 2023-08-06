@@ -41,16 +41,12 @@ const ConfessForm = () => {
 
     }, [data]);
 
-    const postData = () => {
-        postMisdemeanour({ subject, reason, details })
-    }
-
     const handleFormSubmit = (e: FormEvent) => {
         e.preventDefault();
         setTouched(true);
 
         if (isFormFilled) {
-            postData();
+            postMisdemeanour({ subject, reason, details })
         }
     }
 
