@@ -20,7 +20,7 @@ const ConfessForm = () => {
     const [reason, setReason] = useState('');
     const [details, setDetails] = useState('');
     const [showMessage, setShowMessage] = useState(false);
-    const isFormFilled = subject && reason !== 'default' && details
+    const isFormFilled = subject && reason && details
 
     useEffect(() => {
         if (data && data.success === true && data.justTalked === false) {
@@ -65,9 +65,9 @@ const ConfessForm = () => {
             {showMessage && (error || isInvalidConfession) && <div className='errorMessage'>{error || 'Invalid Confession.'}</div>}
 
             <form className='form' onSubmit={(e: FormEvent) => handleFormSubmit(e)}>
-                <SubjectField subject={subject} setFieldState={setSubject} touched={touched} handleChange={handleFieldChange} />
-                <ReasonField reason={reason} setFieldState={setReason} touched={touched} handleChange={handleFieldChange} />
-                <DetailsField details={details} setFieldState={setDetails} touched={touched} handleChange={handleFieldChange} />
+                <SubjectField input={subject} setFieldState={setSubject} touched={touched} handleChange={handleFieldChange} />
+                <ReasonField input={reason} setFieldState={setReason} touched={touched} handleChange={handleFieldChange} />
+                <DetailsField input={details} setFieldState={setDetails} touched={touched} handleChange={handleFieldChange} />
 
                 <input type="submit" value="Confess!" className='form__submit' />
             </form>
