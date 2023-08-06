@@ -1,21 +1,21 @@
-import { useState, useEffect, createContext, useContext } from 'react'
+import { useState, useEffect, createContext, Dispatch, SetStateAction } from 'react'
 import { Misdemeanour } from '../types/misdemeanours.types'
 
 type MisdemeanourContextType = {
     misdemeanours: Misdemeanour[],
-    setMisdemeanours: React.Dispatch<React.SetStateAction<Misdemeanour[]>>
+    setMisdemeanours: Dispatch<SetStateAction<Misdemeanour[]>>
 }
 
-const MisdemeanourContext = createContext<MisdemeanourContextType>({
+type MisdemeanourContextProviderPropsType = {
+    children: React.ReactNode[] | React.ReactNode
+}
+
+export const MisdemeanourContext = createContext<MisdemeanourContextType>({
     misdemeanours: [],
     setMisdemeanours: () => { }
 })
 
-type Props = {
-    children: React.ReactNode[] | React.ReactNode
-}
-
-const MisdemeanourContextProvider = ({ children }: Props) => {
+const MisdemeanourContextProvider = ({ children }: MisdemeanourContextProviderPropsType) => {
     const [misdemeanours, setMisdemeanours] = useState<Misdemeanour[]>([])
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const MisdemeanourContextProvider = ({ children }: Props) => {
             setMisdemeanours(data.misdemeanours);
         }
         fetchData()
-            .catch(console.error);
+            .catch(error => console.error(error));
     }, [])
 
     return (
@@ -34,7 +34,5 @@ const MisdemeanourContextProvider = ({ children }: Props) => {
         </MisdemeanourContext.Provider>
     )
 }
-
-export const useMisdemeanourContext = () => useContext(MisdemeanourContext);
 
 export default MisdemeanourContextProvider;

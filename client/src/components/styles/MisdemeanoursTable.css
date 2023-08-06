@@ -7,23 +7,6 @@
     color: #c2c5fc;
 }
 
-.table__cell {
-    padding: 0 30px;
-}
-
-.table__misdemeamourWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    width: 350px;
-}
-
-.table__img {
-    height: 100px;
-    width: 100px;
-}
-
 /* Table column bg styling */
 tbody>tr:nth-child(n)> :nth-child(1),
 tbody>tr:nth-child(n)> :nth-child(3) {

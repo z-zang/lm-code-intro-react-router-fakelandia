@@ -1,21 +1,15 @@
-import { Link, NavLink, Outlet, Navigate } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import './App.css'
 
 const App = () => {
-    // BUG: I added this so the client redirects to /home when you open it.
-    // however, it means when I refresh the page on another route, it also goes to /home
-    // currently unsure how to fix it.
-    Navigate({ to: '/home' })
     return (
         <>
             <header className='header'>
-                <Link to={'home'} className='header__title'>
-                    <h1>
-                        {`Fakelandia Justice Department`}
-                    </h1>
+                <Link to={''} className='header__title'>
+                    <h1>Fakelandia Justice Department</h1>
                 </Link>
                 <nav className='nav'>
-                    <NavLink to={'home'} className={({ isActive }) =>
+                    <NavLink to={''} className={({ isActive }) =>
                         isActive ? "nav__link--active" : "nav__link"}>
                         Home
                     </NavLink>

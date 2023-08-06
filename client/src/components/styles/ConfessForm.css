@@ -49,6 +49,12 @@
     font-size: larger;
 }
 
+.loadingMessage {
+    color: black;
+    font-weight: 600;
+    font-size: larger;
+}
+
 .errorMessage {
     color: crimson;
     font-weight: 600;
