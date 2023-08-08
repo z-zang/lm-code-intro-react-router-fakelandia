@@ -1,5 +1,5 @@
-import { Link, NavLink, Outlet } from 'react-router-dom'
-import './App.css'
+import { Link, NavLink, Outlet } from 'react-router-dom';
+import './App.css';
 
 const App = () => {
     return (
