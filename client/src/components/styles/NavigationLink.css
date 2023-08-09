@@ -1,0 +1,13 @@
+.nav__link {
+    font-size: 1.25rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.nav__link--active {
+    font-size: 1.25rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #f4f5ff;
+    background-color: rgb(19, 12, 66);
+}

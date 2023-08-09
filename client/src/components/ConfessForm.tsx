@@ -1,18 +1,11 @@
-import { FormEvent, useState, useEffect, useContext, Dispatch, SetStateAction } from 'react'
-import { MisdemeanourContext } from '../context/MisdemeanourContext'
-
+import { useState, useEffect, Dispatch, SetStateAction, FormEvent } from 'react'
 import SubjectField from './SubjectField'
 import ReasonField from './ReasonField'
 import DetailsField from './DetailsField'
-import usePostMisdemeanour from '../api/usePostMisdemeanour'
-
-import { Misdemeanour, MisdemeanourKind } from '../types/misdemeanours.types'
-
-import './styles/ConfessForm.css'
+import usePostMisdemeanour from '../hooks/usePostMisdemeanour'
 
 const ConfessForm = () => {
-    const { setMisdemeanours } = useContext(MisdemeanourContext)
-    const { data, isLoading, error, postMisdemeanour } = usePostMisdemeanour()
+    const { data, isLoading, error, setPostData } = usePostMisdemeanour();
     const isInvalidConfession = data?.success === false
 
     const [touched, setTouched] = useState(false);
@@ -20,25 +13,15 @@ const ConfessForm = () => {
     const [reason, setReason] = useState('');
     const [details, setDetails] = useState('');
     const [showMessage, setShowMessage] = useState(false);
-    const isFormFilled = subject && reason && details
+    const isFormFilled = subject && reason && details;
 
     useEffect(() => {
-        if (data && data.success === true && data.justTalked === false) {
-            const newMisdemeanour: Misdemeanour = {
-                citizenId: 99999,
-                misdemeanour: reason as MisdemeanourKind,
-                date: new Date().toJSON().slice(0, 10).split('-').reverse().join('/')
-            }
-            setMisdemeanours(prev => [newMisdemeanour, ...prev])
-        }
-
         setTouched(false)
         setSubject('')
         setReason('')
         setDetails('')
-        setShowMessage(true)
+        !!data && setShowMessage(true)
         setTimeout(() => setShowMessage(false), 2000);
-
     }, [data]);
 
     const handleFormSubmit = (e: FormEvent) => {
@@ -46,7 +29,7 @@ const ConfessForm = () => {
         setTouched(true);
 
         if (isFormFilled) {
-            postMisdemeanour({ subject, reason, details })
+            setPostData(prev => ({ id: prev.id + 1, subject, reason, details }))
         }
     }
 
@@ -68,7 +51,6 @@ const ConfessForm = () => {
                 <input type="submit" value="Confess!" className='form__submit' />
             </form>
         </>
-
 
     )
 }
