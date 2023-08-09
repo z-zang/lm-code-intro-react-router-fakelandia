@@ -1,13 +1,6 @@
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext, useEffect, Dispatch, SetStateAction } from "react"
 import { MisdemeanourContext } from "../context/MisdemeanourContext"
 import { Misdemeanour, MisdemeanourKind } from '../types/misdemeanours.types'
-
-
-type Data = {
-    success: boolean,
-    justTalked: boolean,
-    message: string
-}
 
 type PostData = {
     id: number,
@@ -16,8 +9,15 @@ type PostData = {
     details: string
 }
 
-const usePostMisdemeanour = () => {
+type Data = {
+    success: boolean,
+    justTalked: boolean,
+    message: string
+}
+
+export const usePostMisdemeanour = () => {
     const { setMisdemeanours } = useContext(MisdemeanourContext)
+
     const [isLoading, setIsLoading] = useState(false)
     const [data, setData] = useState<Data>()
     const [error, setError] = useState('')
@@ -46,31 +46,32 @@ const usePostMisdemeanour = () => {
                 const data = await (await fetch(url, requestOptions)).json()
                 setData(data)
 
+                if (data && data.success === true && data.justTalked === false) {
+                    addNewMisdemeanour(postData, setMisdemeanours)
+                }
+                if (data && data.success === false) {
+                    setError(data.message)
+                }
+
                 setIsLoading(false)
             }
             catch (error) {
-                console.log(error)
+                console.log('Error:', error)
                 setError(error as string)
                 setIsLoading(false)
             }
         }
         postData.id !== 0 && postNewConfession()
-
     }, [postData])
-
-    useEffect(() => {
-        console.log('useposts data', data)
-        if (data && data.success === true && data.justTalked === false) {
-            const newMisdemeanour: Misdemeanour = {
-                citizenId: 99999,
-                misdemeanour: postData.reason as MisdemeanourKind,
-                date: new Date().toJSON().slice(0, 10).split('-').reverse().join('/')
-            }
-            setMisdemeanours(prev => [newMisdemeanour, ...prev])
-        }
-    }, [data])
 
     return { data, isLoading, error, setPostData }
 }
 
-export default usePostMisdemeanour
+export const addNewMisdemeanour = (postData: PostData, setMisdemeanours: Dispatch<SetStateAction<Misdemeanour[]>>) => {
+    const newMisdemeanour: Misdemeanour = {
+        citizenId: 99999,
+        misdemeanour: postData.reason as MisdemeanourKind,
+        date: new Date().toJSON().slice(0, 10).split('-').reverse().join('/')
+    }
+    setMisdemeanours(prev => [newMisdemeanour, ...prev])
+}

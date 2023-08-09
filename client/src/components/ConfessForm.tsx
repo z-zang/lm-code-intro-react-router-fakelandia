@@ -2,7 +2,8 @@ import { useState, useEffect, Dispatch, SetStateAction, FormEvent } from 'react'
 import SubjectField from './SubjectField'
 import ReasonField from './ReasonField'
 import DetailsField from './DetailsField'
-import usePostMisdemeanour from '../hooks/usePostMisdemeanour'
+import { usePostMisdemeanour } from '../hooks/usePostMisdemeanour'
+import './styles/ConfessForm.css'
 
 const ConfessForm = () => {
     const { data, isLoading, error, setPostData } = usePostMisdemeanour();
